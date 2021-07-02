@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "DejaVu Sans Mono:pixelsize=17:antialias=true:autohint=true";
-static int borderpx = 2;
+static char *font = "DejaVu Sans Mono:pixelsize=14:antialias=true:autohint=true";
+static int borderpx = 5;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -93,33 +93,45 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-float alpha = 0.8;
+float alpha = 0.9;
 
-static const char *colorname[] = {
+static const char color_location[] = "/home/jonathan/.config/colors/colors";
+static char color0[] = "#151219";
+static char color1[] = "#675F58";
+static char color2[] = "#6E6F6C";
+static char color3[] = "#8A7565";
+static char color4[] = "#7D827E";
+static char color5[] = "#968A76";
+static char color6[] = "#C8A378";
+static char color7[] = "#c5c3bc";
+static char color8[] = "#898883";
+static char color9[] = "#675F58";
+static char color10[] = "#6E6F6C";
+static char color11[] = "#8A7565";
+static char color12[] = "#7D827E";
+static char color13[] = "#968A76";
+static char color14[] = "#C8A378";
+static char color15[] = "#c5c3bc";
 
-  /* 8 normal colors */
-  [0] = "#1d1f21", /* black   */
-  [1] = "#cc6666", /* red     */
-  [2] = "#b5bd68", /* green   */
-  [3] = "#f0c674", /* yellow  */
-  [4] = "#81a2be", /* blue    */
-  [5] = "#b294bb", /* magenta */
-  [6] = "#8abeb7", /* cyan    */
-  [7] = "#c5c8c6", /* white   */
-
-  /* 8 bright colors */
-  [8]  = "#969896", /* black   */
-  [9]  = "#cc6666", /* red     */
-  [10] = "#b5bd68", /* green   */
-  [11] = "#f0c674", /* yellow  */
-  [12] = "#81a2be", /* blue    */
-  [13] = "#b294bb", /* magenta */
-  [14] = "#8abeb7", /* cyan    */
-  [15] = "#ffffff", /* white   */
-
-  /* special colors */
-  [256] = "#1c1c1c", /* background */
-  [257] = "#c5c8c6", /* foreground */
+static char *colorname[] = {
+  [0] = color0, /* black   */
+  [1] = color1, /* red     */
+  [2] = color2, /* green   */
+  [3] = color3, /* yellow  */
+  [4] = color4, /* blue    */
+  [5] = color5, /* magenta */
+  [6] = color6, /* cyan    */
+  [7] = color7, /* white   */
+  [8]  = color8, /* black   */
+  [9]  = color9, /* red     */
+  [10] = color10, /* green   */
+  [11] = color11, /* yellow  */
+  [12] = color12, /* blue    */
+  [13] = color13, /* magenta */
+  [14] = color14, /* cyan    */
+  [15] = color15, /* white   */
+  [256] = color0, /* background */
+  [257] = color7, /* foreground */
 };
 
 /*
@@ -289,7 +301,7 @@ static Key key[] = {
 	{ XK_KP_Delete,     ControlMask,    "\033[3;5~",    +1,    0},
 	{ XK_KP_Delete,     ShiftMask,      "\033[2K",      -1,    0},
 	{ XK_KP_Delete,     ShiftMask,      "\033[3;2~",    +1,    0},
-	{ XK_KP_Delete,     XK_ANY_MOD,     "\033[P",       -1,    0},
+	{ XK_KP_Delete,     XK_ANY_MOD,     "\033[3~",       -1,    0},
 	{ XK_KP_Delete,     XK_ANY_MOD,     "\033[3~",      +1,    0},
 	{ XK_KP_Multiply,   XK_ANY_MOD,     "\033Oj",       +2,    0},
 	{ XK_KP_Add,        XK_ANY_MOD,     "\033Ok",       +2,    0},
@@ -357,7 +369,7 @@ static Key key[] = {
 	{ XK_Delete,        ControlMask,    "\033[3;5~",    +1,    0},
 	{ XK_Delete,        ShiftMask,      "\033[2K",      -1,    0},
 	{ XK_Delete,        ShiftMask,      "\033[3;2~",    +1,    0},
-	{ XK_Delete,        XK_ANY_MOD,     "\033[P",       -1,    0},
+	{ XK_Delete,        XK_ANY_MOD,     "\033[3~",       -1,    0},
 	{ XK_Delete,        XK_ANY_MOD,     "\033[3~",      +1,    0},
 	{ XK_BackSpace,     XK_NO_MOD,      "\177",          0,    0},
 	{ XK_BackSpace,     Mod1Mask,       "\033\177",      0,    0},
