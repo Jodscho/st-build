@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "DejaVu Sans Mono:pixelsize=14:antialias=true:autohint=true";
-static int borderpx = 5;
+static int borderpx = 10;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -93,7 +93,8 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-float alpha = 0.9;
+//float alpha = 0.85;
+float alpha = 0.85;
 
 static const char color_location[] = "/home/jonathan/.config/colors/colors";
 static char color0[] = "#151219";
